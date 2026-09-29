@@ -1,0 +1,62 @@
+body { 
+    background: #caa4af; 
+    font-family: Arial; 
+    text-align: center; 
+}
+
+.capa, .carrossel { 
+    background: #caa4af; 
+    margin: 20px auto; 
+    padding: 20px; 
+    border-radius: 15px; 
+    max-width: 700px;
+}
+
+/* CAPA E FOTOS - MOSTRA TUDO SEM CORTAR */
+.capa img {
+    width: 100%;
+    height: auto; /* deixa a foto respirar */
+    max-height: 600px;
+    border-radius: 15px;
+}
+
+.area-fotos { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+.fotos { 
+    width: 600px; 
+    height: 400px; /* TAMANHO DA CAIXA FIXO */
+    background: #000; /* FUNDO PRETO PRA NÃO FICAR FEIO QUANDO A FOTO FOR EM PÉ */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotos img { 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* MOSTRA A FOTO INTEIRA SEM CORTAR */
+}
+
+.fotos img.ativa { 
+    display: block; 
+}
+
+.voltar,.avancar { 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    border: none; 
+    background: black; 
+    color: #f8c2d0; 
+    cursor: pointer; 
+    font-size: 20px; 
+}
