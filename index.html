@@ -190,25 +190,31 @@
 
 <script>
     const todosCarrosseis = document.querySelectorAll('.carrossel');
-    todosCarrosseis.forEach((carrossel) => {
-        let indice = 0;
-        const fotos = carrossel.querySelectorAll('.fotos img');
-        if (fotos.length === 0) return;
-        const btnVoltar = carrossel.querySelector('.voltar');
-        const btnAvancar = carrossel.querySelector('.avancar');
-        function mostrar() {
-            fotos.forEach(f => f.classList.remove('ativa'));
-            fotos[indice].classList.add('ativa');
-        }
-        btnAvancar.addEventListener('click', () => {
-            indice = (indice + 1) % fotos.length;
-            mostrar();
-        });
-        btnVoltar.addEventListener('click', () => {
-            indice = (indice - 1 + fotos.length) % fotos.length;
-            mostrar();
-        });
+todosCarrosseis.forEach((carrossel) => {
+    let indice = 0;
+    const fotos = carrossel.querySelectorAll('.fotos img');
+    const btnVoltar = carrossel.querySelector('.voltar');
+    const btnAvancar = carrossel.querySelector('.avancar');
+
+    if (fotos.length <= 1) {
+      if (btnVoltar) btnVoltar.style.display = 'none';
+      if (btnAvancar) btnAvancar.style.display = 'none';
+      return;
+    }
+
+    function mostrar() {
+        fotos.forEach(f => f.classList.remove('ativa'));
+        fotos[indice].classList.add('ativa');
+    }
+    btnAvancar.addEventListener('click', () => {
+        indice = (indice + 1) % fotos.length;
+        mostrar();
     });
+    btnVoltar.addEventListener('click', () => {
+        indice = (indice - 1 + fotos.length) % fotos.length;
+        mostrar();
+    });
+});
 </script>
 
 </body>
