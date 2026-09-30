@@ -20,12 +20,19 @@ body {
     border-radius: 15px;
 }
 
-.area-fotos { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-    margin-top: 15px; 
+.area-fotos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fotos {
+  background: transparent; /* tira o fundo preto */
+}
+
+.voltar, .avancar {
+  position: static; /* tira a seta de dentro da foto */
 }
 
 .fotos { 
